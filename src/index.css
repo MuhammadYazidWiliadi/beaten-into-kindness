@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+
+    --card: 15 23 42;
+    --card-foreground: 248 250 252;
+
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+
+    --primary: 251 191 36;
+    --primary-foreground: 15 23 42;
+
+    --secondary: 30 58 138;
+    --secondary-foreground: 248 250 252;
+
+    --muted: 30 41 59;
+    --muted-foreground: 203 213 225;
+
+    --accent: 30 64 175;
+    --accent-foreground: 248 250 252;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 251 191 36;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 12 18 32;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 251 191 36;
+    --sidebar-primary-foreground: 15 23 42;
+    --sidebar-accent: 30 58 138;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 30 41 59;
+    --sidebar-ring: 251 191 36;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-starry-deep-blue text-foreground font-merriweather;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+    background-size: 400% 400%;
+    animation: paintbrush 8s ease-in-out infinite;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .painterly-bg {
+    background: radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 64, 175, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(30, 58, 138, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    animation: paintbrush 12s ease-in-out infinite;
+  }
+
+  .van-gogh-swirl {
+    background: conic-gradient(from 0deg, #1e3a8a, #1e40af, #fbbf24, #f59e0b, #1e3a8a);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: swirl 15s linear infinite;
+  }
+
+  .textured-gold {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fcd34d 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(30, 58, 138, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Van Gogh inspired star animations */
+  .starry-constellation {
+    position: relative;
+  }
+
+  .starry-constellation::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow: 
+      20px 30px 0 #f59e0b,
+      40px 70px 0 #fcd34d,
+      90px 40px 0 #fbbf24,
+      130px 80px 0 #f59e0b,
+      160px 30px 0 #fcd34d,
+      190px 90px 0 #fbbf24,
+      220px 10px 0 #f59e0b,
+      290px 40px 0 #fcd34d,
+      320px 70px 0 #fbbf24,
+      350px 10px 0 #f59e0b;
+    animation: twinkle 4s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+}
