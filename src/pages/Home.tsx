@@ -34,6 +34,15 @@ export const Home: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+            <a
+              href="https://www.wattpad.com/story/394999344-beaten-into-kindness"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-starry-deep-blue hover:bg-starry-deep-blue/90 text-starry-gold px-8 py-4 rounded-lg font-semibold text-lg hover-glow transition-all duration-300 flex items-center gap-2 group"
+            >
+              Read now
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
             <Link 
               to="/novel"
               className="bg-starry-gold hover:bg-starry-bright-gold text-starry-deep-blue px-8 py-4 rounded-lg font-semibold text-lg hover-glow transition-all duration-300 flex items-center gap-2 group"
